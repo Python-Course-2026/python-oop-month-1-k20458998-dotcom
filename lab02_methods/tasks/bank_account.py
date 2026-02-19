@@ -4,8 +4,12 @@ class BankAccount:
         self.balance = balance
 
     def deposit(self, amount: int):
-        pass
+        self.balance = self.balance + amount
 
     def withdraw(self, amount: int):
         """Снимает только если достаточно средств"""
-        pass
+        if self.balance>=amount:
+            self.balance = self.balance - amount
+            return True
+        else:
+            return False
